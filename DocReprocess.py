@@ -315,8 +315,8 @@ def reprocess(username, password, host, dbc, usrdbname, usrdbpwd, usrdbhost, swa
             website_URL = "https://datasiteone.merrillcorp.com/global/projects"
             driver.get(website_URL)
             time.sleep(2)
-            driver.find_element_by_id("username").send_keys("111598")
-            driver.find_element_by_id("password").send_keys("Lbsnaa20$")
+            driver.find_element_by_id("username").send_keys(<userName>)
+            driver.find_element_by_id("password").send_keys(<password>)
             driver.find_element_by_class_name("primary").click()
             time.sleep(12)
             token = str(driver.execute_script('return window.localStorage.authToken'))
@@ -440,15 +440,15 @@ if __name__ == '__main__':
         print("Directory ", path, " already exists")
         print("Directory ", log_path, " already exists")
     dbc = ["US", "EU"]
-    username = ["readOnly", "readOnly_eu"]
-    password = ["pr0dd3v", "pr0dd3v3u"]
-    host = ["mgd-us2p-mgs-1a.dmz01.mrll.com", "mongodb-prod-eu4.mrll.com"]
+    username = [<US_db_userName>, <EU_db_userName>]
+    password = [<US_db_password>, <EU_db_password>]
+    host = [<US_host>, <EU_host>]
     swagger_URL = ["https://datasiteone.merrillcorp.com/swagger-ui.html",
                    "https://global.datasiteone.merrillcorp.com/swagger-ui.html"]
     port = "27017"
-    usrdbhost = "mgd-us2p-gd-1a.dmz01.mrll.com"
-    usrdbname = "readOnly"
-    usrdbpwd = "pr0dd3v"
+    usrdbhost = <User_db_host>
+    usrdbname = <User_db_userName>
+    usrdbpwd = <User_db_password>
     LOG_FILENAME = log_path + 'doc.log'
     logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
     file_list = list()
