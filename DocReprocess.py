@@ -31,7 +31,7 @@ __file__ = "DocReprocess.py"
 
 # sending mail via SMTP server
 
-def send_mail(send_from, send_to, subject, text, files=[], server="relay.stp.mrll.com"):
+def send_mail(send_from, send_to, subject, text, files=[], server=<SMTP SERVER HOST>):
     assert type(send_to) == list
     assert type(files) == list
     msg = MIMEMultipart()
@@ -58,7 +58,7 @@ def main():
         reprocess(username[num], password[num], host[num], dbc[num], usrdbname, usrdbpwd, usrdbhost, swagger_URL[num])
     if failure:
         esubject = "FAILURE Doc Reprocess"
-        esend_to = ["velkumar.loganathan@datasite.com"]
+        esend_to = [<To ADDRESS>]
         if len(file_list) == 0:
             ebody = "Error on the process of Pushing data" + "\n" + "\n" + "Datacenter  " + dbc + "\n" + "\n" + "Please find the following Error" + "\n" + str(
                 error)
@@ -463,9 +463,8 @@ if __name__ == '__main__':
     error = ''
     contents = ''
     pre_content = ''
-    send_from = "velkumar.loganathan@datasite.com"
-    send_to = ["b4g2z8c3c8w2t1q7@ds1global.slack.com"]
-    #b4g2z8c3c8w2t1q7@ds1global.slack.com
+    send_from = <FROM ADDRESS>
+    send_to = [<TO ADDRESS>]
     subject = 'Document Reprocessing via Swagger'
     zero_Docs = False
     logging.info('Today' + folder)
@@ -493,8 +492,8 @@ if not zero_Docs:
         send_mail(send_from, send_to, subject, body, file_list)
 else:
     logging.critical('TOW DAYS WE GOT ZERO RECORD.')
-    hsend_from = "velkumar.loganathan@datasite.com"
-    hsend_to = ["velkumar.loganathan@datasite.com"]
+    hsend_from = <FROM ADDRESS>
+    hsend_to = [<TO ADDRESS>]
     hsubject = "ZERO RECORD..! Reprocess"
     hbody = "Hello Team," + "\n" + "\n" + "Docs Reprocessed Today  " + now.strftime(
         '%d/%m/%Y') + "\n" + 'TOW DAYS WE GOT ZERO RECORD.' + "\n" + "\n" + 'Please have a look into it' + "\n" + "\n" + "Kind Regards," + "\n" + "Velkumar"
