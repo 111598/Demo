@@ -8,7 +8,7 @@ swagger_url = "Swagger_Url"
 projectId = "project_Id"
 
 driver = webdriver.Chrome(
-    executable_path="c:\\dev\\reprocess\\lib\\chromedriver.exe")
+    executable_path="Selenium_Web_Driver_Path") #Forexample: c:\\dev\\reprocess\\lib\\chromedriver.exe
 driver.set_window_size(1024, 600)
 driver.maximize_window()
 website_URL = "https://datasiteone.merrillcorp.com/global/projects"
