@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 correspondenceId = "correspondence_id_1","correspondence_id_2",...,"correspondence_id_N"
-swagger_url = "https://emea.datasite.com/swagger-ui.html?urls.primaryName=Q%26A"
+swagger_url = "Swagger_Url"
 projectId = "project_Id"
 
 driver = webdriver.Chrome(
